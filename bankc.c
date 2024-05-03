@@ -49,20 +49,17 @@
         printf("withdrwal successfully:\n");
          }
          
-         break;
-         
+         break;     
          case 3:
           printf("The account holder is %s\n",cust.nm);
      printf("Account type is: %s\n",cust.type);
      printf("Total balance is: %f\n",cust.bal);
-     break;
-         
+     break;     
          case 4:
           exit(1);
          break;
          default:
          printf("wrong choice");
-         
     }
     printf("If you eant to contineu then press 1 otherwise press 2:\n");
     scanf("%d",&ch);
