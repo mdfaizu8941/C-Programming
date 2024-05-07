@@ -1,0 +1,87 @@
+  #include<stdio.h>
+#include<string.h>
+struct student
+{
+  char nm[30];
+  int roll;
+  char course[30];
+  char depart[30];
+  int yoj;
+};
+void yearOfJoin ();
+void rollNum ();
+int
+main ()
+{
+  struct student stu[450];
+  int i, n, r, year;
+  printf ("\t\t\t\tOUTPUT\n");
+  printf ("\t\t\t********INPUT********\n");
+  printf ("Input a number of a student: ");
+  scanf ("%d", &n);
+  for (i = 0; i < n; i++)
+	{
+	  printf ("\nInput details of %d student:\n", i + 1);
+	  printf ("Input a name:");
+	  scanf ("%s", stu[i].nm);
+	  printf ("Input a roll number:");
+	  scanf ("%d", &stu[i].roll);
+	  printf ("Input a course:");
+	  scanf ("%s", stu[i].course);
+	  printf ("INput a department:");
+	  scanf ("%s", stu[i].depart);
+	  printf ("Input a year of joining:");
+	  scanf ("%d", &stu[i].yoj);
+	}
+  printf ("\nInput a particular year:");
+  scanf ("%d", &year);
+  printf ("\nInput a roll number:");
+  scanf ("%d", &r);
+  printf ("\t\t\t********OUTPUT********\n");
+  yearOfJoin (stu, n, year);
+  rollNum (stu, n, r);
+  return 0;
+}
+
+void
+yearOfJoin (struct student stu[], int n, int year)
+{
+  int i, f=0;
+  printf("Students who join in %d year\n",year);
+  for (i = 0; i < n; i++)
+	{
+	  if (stu[i].yoj == year)
+		{ 
+		    
+         printf("Name:%s",stu[i].nm);
+         f=1;
+		}
+    }
+     if(f==0)
+    printf ("Sorry!,Any student did not take admmission in %d year:\n", year);
+}
+
+void rollNum (struct student stu[], int n, int r)
+{
+  int i,f=0;
+  
+  for (i = 0; i < n; i++)
+	{
+	  if (stu[i].roll == r)
+		{
+	    printf ("The data of student who's roll number is %d\n", r);
+        printf("Name:%s",stu[i].nm);
+        printf("\nRoll number:%d",stu[i].roll);
+        printf("\nCourse:%s",stu[i].course);
+        printf("\nDepartment:%s",stu[i].depart);
+        printf("\nYear of joining:%d",stu[i].yoj);
+		f=1;
+		}
+	 
+	}
+	if(f==0)
+	{
+	    printf("Any student does not have the %d roll number",r);
+	}
+
+}
