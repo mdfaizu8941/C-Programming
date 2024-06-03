@@ -14,7 +14,7 @@
         f=fopen("iz.txt","w");
  
         while((c=fgetc(fp))!=EOF){
-            
+            ungetc(c,fp);
             if(fscanf(fp,"%s",word)==1)
              {i=0;
                { if(strcmp(word,"the")==0)
