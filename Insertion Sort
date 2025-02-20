@@ -1,0 +1,36 @@
+ #include<stdio.h>
+ void insertion(int arr[],int n)
+ {
+      int shifts=0,comp=0;
+     for(int i=1;i<n;i++)
+     {
+         int temp=arr[i];
+         int j=i-1;
+         while(j>=0 && arr[j]>temp)
+         {
+             arr[j+1]=arr[j];
+             j--;
+              shifts++;
+              comp++;
+         }
+         arr[j+1]=temp;
+          shifts++;
+     }
+     printf("\nThe sorted array:\n");
+     for(int i=0;i<n;i++)
+        printf("%d ",arr[i]);
+     printf("\nTotal shifts are: %d",shifts);
+      printf("\nTotal comparisons are: %d",comp);
+ }
+ int main()
+ {
+     int arr[100],n,i;
+     printf("Input limit :\n");
+     scanf("%d",&n);
+     printf("Input elements:\n");
+     for(int i=0;i<n;i++)
+        scanf("%d",&arr[i]);
+      insertion(arr,n);
+ 
+     return 0;
+ }
