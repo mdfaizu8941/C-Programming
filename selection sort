@@ -1,0 +1,38 @@
+ #include<stdio.h>
+ void selection(int arr[],int n)
+ {
+      int swaps=0,comp=0;
+     for(int i=0;i<n;i++)
+     {
+          int min=i;
+          for(int j=i+1;j<n;j++)
+          {    comp++;
+              if(arr[min]>arr[j])
+                min =j;
+          }
+         if(min!=i)
+         {
+            int temp=arr[i];
+             arr[i]=arr[min];
+             arr[min]=temp;
+             swaps++;
+         }
+     }
+     printf("\nThe sorted array:\n");
+     for(int i=0;i<n;i++)
+        printf("%d ",arr[i]);
+     printf("\nTotal swaps are: %d",swaps);
+      printf("\nTotal comparisons are: %d",comp);
+ }
+ int main()
+ {
+     int arr[100],n,i;
+     printf("Input limit :\n");
+     scanf("%d",&n);
+     printf("Input elements:\n");
+     for(int i=0;i<n;i++)
+        scanf("%d",&arr[i]);
+      selection(arr,n);
+ 
+     return 0;
+ }
