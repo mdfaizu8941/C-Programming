@@ -1,0 +1,41 @@
+#include<stdio.h>
+int main()
+{
+ int stall[100],n,k;
+ printf("Input limit\n");
+ scanf("%d",&n);
+ printf("Input elements:\n");
+ for(int i=0;i<n;i++)
+   scanf("%d",&stall[i]);
+ printf("Input number of cows\n");
+ scanf("%d",&k);
+ int cow[3]={0};
+ for(int i=0;i<n-1;i++)
+ {
+  	for(int j=0;j<n-i-1;j++)
+  	{if(stall[j]>stall[j+1]){
+  	  int temp=stall[j];
+  	  stall[j]=stall[j+1];
+  	  stall[j+1]=temp;
+  	  }
+  }}
+  int l=0;
+ cow[l]=stall[0];
+ l++;
+ 
+ for(int i=1;i<n;i++)
+ {
+   if(stall[i]-stall[i-1]!=1)
+   {
+      cow[l]=stall[i];
+      l++;
+      }
+   }
+   if(k==n-1)
+   printf("The distance is 1");
+   
+   else
+  printf("%d\n",cow[1]-cow[0]);
+   
+ return 0;
+ }
