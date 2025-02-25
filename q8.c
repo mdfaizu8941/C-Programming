@@ -21,7 +21,7 @@ last using dynamic memory allocation */
      }
      printf("Input a particular index to be reversed:\n");
      scanf("%d",&start);
-     for(i=start-1,j=n-1;i<j;i++,j--)
+     for(i=start,j=n-1;i<j;i++,j--)
      {
          temp=*(p+i);
          *(p+i)=*(p+j);
